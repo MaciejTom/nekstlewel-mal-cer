@@ -5,27 +5,28 @@ import { contactContent, siteConfig } from "@/lib/content";
 const s = {
   section: "bg-secondary section-spacing",
   container: "container mx-auto px-6",
-  grid: "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16",
+  grid: "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20",
 
   left: "flex flex-col",
-  headline: "font-heading text-4xl md:text-5xl text-foreground h2-industrial mb-6",
-  description: "text-lg text-muted-foreground mb-10",
+  headline: "font-heading text-3xl md:text-4xl lg:text-5xl text-foreground h2-industrial mb-6",
+  description: "text-lg text-muted-foreground mb-10 leading-relaxed",
 
-  contactItems: "space-y-6",
-  contactItem: "flex items-center gap-4",
-  contactIcon: "w-12 h-12 bg-primary/10 flex items-center justify-center",
-  contactIconInner: "text-primary text-xl",
-  contactLabel: "text-sm text-muted-foreground",
-  contactValue: "text-lg text-foreground font-medium",
+  contactItems: "space-y-5",
+  contactItem: "flex items-center gap-5 group",
+  contactIcon: "w-14 h-14 bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors",
+  contactIconInner: "text-primary",
+  contactLabel: "text-sm text-muted-foreground mb-0.5",
+  contactValue: "text-lg text-foreground font-medium group-hover:text-primary transition-colors",
 
-  area: "mt-10 pt-8 border-t border-border/50",
-  areaLabel: "text-sm text-muted-foreground mb-2",
-  areaValue: "text-foreground",
+  area: "mt-10 pt-8 border-t border-border/30",
+  areaLabel: "text-sm text-muted-foreground mb-2 uppercase tracking-wider",
+  areaValue: "text-foreground leading-relaxed",
 
-  right: "bg-card border border-border/50 p-8 lg:p-10",
-  ctaHeadline: "font-heading text-3xl text-foreground mb-4",
-  ctaDescription: "text-muted-foreground mb-8",
-  ctaButton: "w-full inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-5 font-heading text-xl tracking-wider hover:bg-primary/90 transition-colors",
+  right: "bg-card border border-border/30 p-8 lg:p-12 relative overflow-hidden",
+  rightGlow: "absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl",
+  ctaHeadline: "font-heading text-2xl md:text-3xl text-foreground mb-4 relative",
+  ctaDescription: "text-muted-foreground mb-8 leading-relaxed relative",
+  ctaButton: "w-full inline-flex items-center justify-center gap-4 bg-primary text-primary-foreground px-8 py-6 font-heading text-xl tracking-wider btn-hover btn-primary-glow relative",
 };
 
 export function ContactSection() {
@@ -39,21 +40,21 @@ export function ContactSection() {
             <p className={s.description}>{contactContent.description}</p>
 
             <div className={s.contactItems}>
-              <div className={s.contactItem}>
+              <a href={siteConfig.phoneHref} className={s.contactItem}>
                 <div className={s.contactIcon}>
-                  <span className={`material-symbols-outlined ${s.contactIconInner}`}>call</span>
+                  <span className={`material-symbols-outlined text-2xl ${s.contactIconInner}`}>call</span>
                 </div>
                 <div>
                   <div className={s.contactLabel}>Telefon</div>
-                  <a href={siteConfig.phoneHref} className={s.contactValue}>
+                  <div className={s.contactValue}>
                     {contactContent.details.phone}
-                  </a>
+                  </div>
                 </div>
-              </div>
+              </a>
 
               <div className={s.contactItem}>
                 <div className={s.contactIcon}>
-                  <span className={`material-symbols-outlined ${s.contactIconInner}`}>location_on</span>
+                  <span className={`material-symbols-outlined text-2xl ${s.contactIconInner}`}>location_on</span>
                 </div>
                 <div>
                   <div className={s.contactLabel}>Adres</div>
@@ -63,7 +64,7 @@ export function ContactSection() {
 
               <div className={s.contactItem}>
                 <div className={s.contactIcon}>
-                  <span className={`material-symbols-outlined ${s.contactIconInner}`}>badge</span>
+                  <span className={`material-symbols-outlined text-2xl ${s.contactIconInner}`}>badge</span>
                 </div>
                 <div>
                   <div className={s.contactLabel}>NIP</div>
@@ -80,10 +81,11 @@ export function ContactSection() {
 
           {/* Right - CTA Card */}
           <div className={s.right}>
+            <div className={s.rightGlow} />
             <h3 className={s.ctaHeadline}>{contactContent.cta.headline}</h3>
             <p className={s.ctaDescription}>{contactContent.cta.description}</p>
             <a href={siteConfig.phoneHref} className={s.ctaButton}>
-              <span className="material-symbols-outlined text-2xl">call</span>
+              <span className="material-symbols-outlined text-3xl">call</span>
               {contactContent.cta.buttonLabel}
             </a>
           </div>

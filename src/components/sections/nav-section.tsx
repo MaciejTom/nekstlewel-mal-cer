@@ -1,35 +1,46 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { navItems, siteConfig } from "@/lib/content";
 
 const s = {
-  nav: "fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50",
-  container: "container mx-auto px-6 flex items-center justify-between h-16",
+  nav: "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+  navScrolled: "bg-background/98 backdrop-blur-md border-b border-border/50 shadow-lg",
+  navTop: "bg-transparent",
+  container: "container mx-auto px-6 flex items-center justify-between h-16 md:h-20",
 
-  logo: "flex items-center gap-2",
-  logoIcon: "w-10 h-10 bg-primary flex items-center justify-center",
-  logoText: "font-heading text-2xl text-foreground",
+  logo: "flex items-center gap-3 group",
+  logoIcon: "w-10 h-10 md:w-11 md:h-11 bg-primary flex items-center justify-center transition-transform group-hover:scale-105",
+  logoText: "font-heading text-xl md:text-2xl text-foreground",
 
   links: "hidden lg:flex items-center gap-1",
-  link: "px-4 py-2 text-sm text-muted-foreground hover:text-primary transition-colors",
+  link: "px-4 py-2 text-sm text-muted-foreground hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full",
 
-  cta: "hidden md:inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2 font-heading text-sm tracking-wider hover:bg-primary/90 transition-colors",
+  cta: "hidden md:inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 font-heading text-sm tracking-wider btn-hover btn-primary-glow",
 
-  mobileBtn: "lg:hidden w-10 h-10 flex items-center justify-center text-foreground",
+  mobileBtn: "lg:hidden w-11 h-11 flex items-center justify-center text-foreground hover:text-primary transition-colors",
 
-  mobileMenu: "lg:hidden fixed inset-0 top-16 bg-background/98 backdrop-blur-sm z-40",
-  mobileMenuInner: "container mx-auto px-6 py-8 flex flex-col gap-4",
-  mobileLink: "text-lg text-foreground py-3 border-b border-border/50 hover:text-primary transition-colors",
-  mobileCta: "mt-4 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-4 font-heading text-lg tracking-wider",
+  mobileMenu: "lg:hidden fixed inset-0 top-16 md:top-20 bg-background/98 backdrop-blur-md z-40",
+  mobileMenuInner: "container mx-auto px-6 py-8 flex flex-col gap-2",
+  mobileLink: "text-lg text-foreground py-4 border-b border-border/30 hover:text-primary hover:pl-2 transition-all",
+  mobileCta: "mt-6 inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-4 font-heading text-lg tracking-wider",
 };
 
 export function NavSection() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <nav className={s.nav}>
+      <nav className={`${s.nav} ${scrolled ? s.navScrolled : s.navTop}`}>
         <div className={s.container}>
           {/* Logo */}
           <a href="#" className={s.logo}>
@@ -82,7 +93,7 @@ export function NavSection() {
               </a>
             ))}
             <a href={siteConfig.phoneHref} className={s.mobileCta}>
-              <span className="material-symbols-outlined">call</span>
+              <span className="material-symbols-outlined text-xl">call</span>
               Zadzwoń: {siteConfig.phone}
             </a>
           </div>

@@ -7,26 +7,28 @@ const s = {
   container: "container mx-auto px-6",
 
   header: "text-center max-w-3xl mx-auto mb-16",
-  headline: "font-heading text-4xl md:text-5xl text-foreground h2-industrial-center",
-  description: "mt-6 text-lg text-muted-foreground",
+  headline: "font-heading text-3xl md:text-4xl lg:text-5xl text-foreground h2-industrial-center",
+  description: "mt-6 text-lg text-muted-foreground leading-relaxed",
 
   grid: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
-  gridBottom: "grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[66%] mx-auto mt-6",
+  gridBottom: "flex flex-wrap justify-center gap-6 mt-6",
+  cardBottomWrapper: "w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]",
 
-  card: "bg-card border border-border/50 p-8 hover:border-primary/50 transition-colors group",
+  card: "bg-card border border-border/30 p-8 card-hover hover:border-primary/40 group h-full",
   cardIcon: "w-14 h-14 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors",
-  cardIconInner: "text-primary text-2xl",
-  cardTitle: "font-heading text-xl text-foreground mb-3",
-  cardSubtitle: "text-sm text-primary mb-2",
-  cardDesc: "text-muted-foreground text-sm leading-relaxed mb-4",
+  cardIconInner: "text-primary",
+  cardTitle: "font-heading text-xl text-foreground mb-2",
+  cardSubtitle: "text-sm text-primary mb-3",
+  cardDesc: "text-muted-foreground text-sm leading-relaxed mb-5",
 
-  featureList: "space-y-2",
-  featureItem: "flex items-start gap-2 text-sm text-muted-foreground",
+  featureList: "space-y-2.5",
+  featureItem: "flex items-start gap-3 text-sm text-muted-foreground",
   featureDot: "w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0",
 
-  ctaCard: "bg-primary p-8 flex flex-col items-center justify-center text-center",
-  ctaTitle: "font-heading text-2xl text-primary-foreground mb-4",
-  ctaButton: "inline-flex items-center gap-2 bg-background text-foreground px-6 py-3 font-heading tracking-wider hover:bg-foreground hover:text-background transition-colors",
+  ctaWrapper: "flex justify-center mt-10",
+  ctaCard: "bg-primary p-8 md:p-10 flex flex-col items-center justify-center text-center max-w-lg w-full",
+  ctaTitle: "font-heading text-2xl md:text-3xl text-primary-foreground mb-4",
+  ctaButton: "inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 font-heading text-lg tracking-wider btn-hover hover:bg-foreground hover:text-background",
 };
 
 const iconMap: Record<string, string> = {
@@ -45,7 +47,7 @@ export function ServicesSection() {
   const renderCard = (service: typeof services[0]) => (
     <div key={service.id} className={s.card}>
       <div className={s.cardIcon}>
-        <span className={`material-symbols-outlined ${s.cardIconInner}`}>
+        <span className={`material-symbols-outlined text-2xl ${s.cardIconInner}`}>
           {iconMap[service.icon] || "build"}
         </span>
       </div>
@@ -77,17 +79,21 @@ export function ServicesSection() {
           {topServices.map(renderCard)}
         </div>
 
-        {/* Bottom Row - 2 cards + CTA */}
+        {/* Bottom Row - 2 cards centered */}
         <div className={s.gridBottom}>
-          {bottomServices.map(renderCard)}
+          {bottomServices.map((service) => (
+            <div key={service.id} className={s.cardBottomWrapper}>
+              {renderCard(service)}
+            </div>
+          ))}
         </div>
 
         {/* CTA Card */}
-        <div className="max-w-md mx-auto mt-6">
+        <div className={s.ctaWrapper}>
           <div className={s.ctaCard}>
             <h3 className={s.ctaTitle}>Potrzebujesz wyceny?</h3>
             <a href={siteConfig.phoneHref} className={s.ctaButton}>
-              <span className="material-symbols-outlined">call</span>
+              <span className="material-symbols-outlined text-xl">call</span>
               Zadzwoń: {siteConfig.phone}
             </a>
           </div>

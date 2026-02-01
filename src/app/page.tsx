@@ -7,6 +7,7 @@ import {
   FaqSection,
   ContactSection,
   FooterSection,
+  BackToTop,
 } from "@/components/sections";
 
 export default function HomePage() {
@@ -22,6 +23,7 @@ export default function HomePage() {
         <ContactSection />
       </main>
       <FooterSection />
+      <BackToTop />
     </>
   );
 }

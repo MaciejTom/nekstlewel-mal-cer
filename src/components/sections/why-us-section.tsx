@@ -6,22 +6,24 @@ import { whyUsContent } from "@/lib/content";
 const s = {
   section: "bg-secondary section-spacing",
   container: "container mx-auto px-6",
-  grid: "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center",
+  grid: "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center",
 
   content: "flex flex-col gap-8",
-  headline: "font-heading text-4xl md:text-5xl text-foreground h2-industrial",
+  headline: "font-heading text-3xl md:text-4xl lg:text-5xl text-foreground h2-industrial",
   description: "space-y-4",
-  paragraph: "text-muted-foreground leading-relaxed",
+  paragraph: "text-muted-foreground leading-relaxed text-base",
 
-  featuresGrid: "grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8",
-  featureCard: "bg-background/50 p-6 border border-border/50",
-  featureIcon: "w-12 h-12 bg-primary/10 flex items-center justify-center mb-4",
+  featuresGrid: "grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8",
+  featureCard: "bg-background/50 p-6 border border-border/30 card-hover hover:border-primary/40 group",
+  featureIcon: "w-12 h-12 bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors",
   featureIconInner: "text-primary",
-  featureTitle: "font-heading text-lg text-foreground mb-2",
+  featureTitle: "font-heading text-base text-foreground mb-2",
   featureDesc: "text-sm text-muted-foreground leading-relaxed",
 
-  imageWrapper: "relative aspect-[4/3] lg:aspect-square",
-  image: "object-cover rounded-sm",
+  imageWrapper: "relative aspect-[4/3] lg:aspect-[3/4] overflow-hidden",
+  image: "object-cover",
+  imageOverlay: "absolute inset-0 bg-gradient-to-t from-background/20 to-transparent",
+  imageBorder: "absolute inset-0 border border-primary/20",
 };
 
 const iconMap: Record<string, string> = {
@@ -70,6 +72,8 @@ export function WhyUsSection() {
               fill
               className={s.image}
             />
+            <div className={s.imageOverlay} />
+            <div className={s.imageBorder} />
           </div>
         </div>
       </div>

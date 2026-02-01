@@ -6,3 +6,4 @@ export { PortfolioSection } from "./portfolio-section";
 export { FaqSection } from "./faq-section";
 export { ContactSection } from "./contact-section";
 export { FooterSection } from "./footer-section";
+export { BackToTop } from "./back-to-top";

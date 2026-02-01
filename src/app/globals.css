@@ -109,8 +109,15 @@ html {
 
 /* Section spacing */
 .section-spacing {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }
 
 /* Signature element: red underline accent on H2 */
@@ -196,19 +203,102 @@ details summary {
 .h2-industrial::after {
   content: "";
   display: block;
-  width: 4rem;
-  height: 4px;
-  background: var(--primary);
-  margin-top: 1rem;
+  width: 5rem;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--primary) 70%, transparent);
+  margin-top: 1.25rem;
 }
 
 .h2-industrial-center::after {
   content: "";
   display: block;
-  width: 4rem;
-  height: 4px;
+  width: 5rem;
+  height: 5px;
   background: var(--primary);
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Focus states */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Scroll animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  50% {
+    transform: translateY(8px) translateX(-50%);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -12px rgba(234, 179, 8, 0.15);
+}
+
+/* Button hover scale */
+.btn-hover {
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-hover:hover {
+  transform: scale(1.02);
+}
+.btn-hover:active {
+  transform: scale(0.98);
+}
+
+/* Primary button glow */
+.btn-primary-glow:hover {
+  box-shadow: 0 0 30px -5px rgba(234, 179, 8, 0.4);
+}
+
+/* Section divider */
+.section-divider {
+  position: relative;
+}
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 4rem;
+  background: linear-gradient(to bottom, transparent, var(--border), transparent);
 }
