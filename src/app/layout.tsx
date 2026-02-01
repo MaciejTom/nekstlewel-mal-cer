@@ -1,20 +1,26 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Bebas_Neue, Source_Sans_3, Fira_Code } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  variable: "--font-bebas",
   subsets: ["latin", "latin-ext"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const sourceSans = Source_Sans_3({
+  variable: "--font-source-sans",
+  subsets: ["latin", "latin-ext"],
+});
+
+const firaCode = Fira_Code({
+  variable: "--font-fira",
   subsets: ["latin", "latin-ext"],
 });
 
 export const metadata: Metadata = {
-  title: "TOM-ART | Usługi remontowo-budowlane",
-  description: "Od ścian po podłogi — pełen zakres prac remontowych. Tynki, posadzki, malowanie, murarstwo, izolacje. Rzepiennik, Tuchów, okolice Tarnowa.",
+  title: "TOM-ART | Usługi remontowo-budowlane Krosno Odrzańskie",
+  description: "Od ścian po podłogi — pełen zakres prac remontowych. Tynki, posadzki, malowanie, murarstwo, izolacje. Krosno Odrzańskie i okolice.",
 };
 
 export default function RootLayout({
@@ -30,7 +36,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+      <body className={`${bebasNeue.variable} ${sourceSans.variable} ${firaCode.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

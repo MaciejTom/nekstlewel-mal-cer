@@ -1,0 +1,8 @@
+export { NavSection } from "./nav-section";
+export { HeroSection } from "./hero-section";
+export { WhyUsSection } from "./why-us-section";
+export { ServicesSection } from "./services-section";
+export { PortfolioSection } from "./portfolio-section";
+export { FaqSection } from "./faq-section";
+export { ContactSection } from "./contact-section";
+export { FooterSection } from "./footer-section";
