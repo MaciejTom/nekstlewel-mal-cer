@@ -196,7 +196,18 @@ details summary {
 .font-heading {
   font-family: var(--font-bebas), system-ui, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
+}
+
+/* Body text base size */
+.text-body {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.text-body-sm {
+  font-size: 0.9375rem;
+  line-height: 1.7;
 }
 
 /* Industrial Yellow signature: yellow bar under H2 */
@@ -301,4 +312,66 @@ button:focus-visible {
   width: 1px;
   height: 4rem;
   background: linear-gradient(to bottom, transparent, var(--border), transparent);
+}
+
+/* Logo styling */
+.logo-box {
+  position: relative;
+  overflow: hidden;
+}
+.logo-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+}
+
+/* Icon container sizes - standardized */
+.icon-sm { width: 2.5rem; height: 2.5rem; } /* 40px */
+.icon-md { width: 3rem; height: 3rem; }     /* 48px */
+.icon-lg { width: 3.5rem; height: 3.5rem; } /* 56px */
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(23, 23, 23, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Yellow accent line */
+.accent-line {
+  position: relative;
+}
+.accent-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 100%;
+  background: var(--primary);
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
+}
+
+/* Better tap targets on mobile */
+@media (max-width: 768px) {
+  a, button {
+    min-height: 44px;
+  }
 }

@@ -10,7 +10,7 @@ const s = {
   container: "container mx-auto px-6 flex items-center justify-between h-16 md:h-20",
 
   logo: "flex items-center gap-3 group",
-  logoIcon: "w-10 h-10 md:w-11 md:h-11 bg-primary flex items-center justify-center transition-transform group-hover:scale-105",
+  logoIcon: "icon-md bg-primary logo-box flex items-center justify-center transition-transform group-hover:scale-105",
   logoText: "font-heading text-xl md:text-2xl text-foreground",
 
   links: "hidden lg:flex items-center gap-1",

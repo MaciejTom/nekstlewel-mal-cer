@@ -13,7 +13,7 @@ const s = {
 
   contactItems: "space-y-5",
   contactItem: "flex items-center gap-5 group",
-  contactIcon: "w-14 h-14 bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors",
+  contactIcon: "icon-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors",
   contactIconInner: "text-primary",
   contactLabel: "text-sm text-muted-foreground mb-0.5",
   contactValue: "text-lg text-foreground font-medium group-hover:text-primary transition-colors",

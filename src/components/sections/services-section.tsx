@@ -15,7 +15,7 @@ const s = {
   cardBottomWrapper: "w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]",
 
   card: "bg-card border border-border/30 p-8 card-hover hover:border-primary/40 group h-full",
-  cardIcon: "w-14 h-14 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors",
+  cardIcon: "icon-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors",
   cardIconInner: "text-primary",
   cardTitle: "font-heading text-xl text-foreground mb-2",
   cardSubtitle: "text-sm text-primary mb-3",

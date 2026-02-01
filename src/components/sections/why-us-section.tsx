@@ -11,11 +11,11 @@ const s = {
   content: "flex flex-col gap-8",
   headline: "font-heading text-3xl md:text-4xl lg:text-5xl text-foreground h2-industrial",
   description: "space-y-4",
-  paragraph: "text-muted-foreground leading-relaxed text-base",
+  paragraph: "text-body text-muted-foreground",
 
   featuresGrid: "grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8",
   featureCard: "bg-background/50 p-6 border border-border/30 card-hover hover:border-primary/40 group",
-  featureIcon: "w-12 h-12 bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors",
+  featureIcon: "icon-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors",
   featureIconInner: "text-primary",
   featureTitle: "font-heading text-base text-foreground mb-2",
   featureDesc: "text-sm text-muted-foreground leading-relaxed",

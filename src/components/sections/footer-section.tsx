@@ -9,7 +9,7 @@ const s = {
   top: "flex flex-col md:flex-row items-center justify-between gap-8 mb-10 pb-10 border-b border-border/20",
 
   logo: "flex items-center gap-3 group",
-  logoIcon: "w-12 h-12 bg-primary flex items-center justify-center transition-transform group-hover:scale-105",
+  logoIcon: "icon-lg bg-primary logo-box flex items-center justify-center transition-transform group-hover:scale-105",
   logoText: "font-heading text-2xl text-foreground",
 
   nav: "flex flex-wrap justify-center gap-x-8 gap-y-3",
