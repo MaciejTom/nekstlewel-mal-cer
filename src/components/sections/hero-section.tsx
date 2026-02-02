@@ -4,7 +4,7 @@ import Image from "next/image";
 import { heroContent, siteConfig } from "@/lib/content";
 
 const s = {
-  section: "min-h-[80vh] flex items-center relative bg-background pt-20 overflow-hidden",
+  section: "min-h-screen flex items-center relative bg-background pt-20 overflow-hidden",
   overlay: "absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40 z-10",
   imageBg: "absolute inset-0 animate-subtle-zoom",
   container: "container mx-auto px-6 py-16 lg:py-24 relative z-20",
@@ -42,7 +42,7 @@ export function HeroSection() {
       {/* Background Image */}
       <div className={s.imageBg}>
         <Image
-          src="/first.jpg"
+          src="/real-4.jpg"
           alt="TOM-ART realizacje"
           fill
           className="object-cover"

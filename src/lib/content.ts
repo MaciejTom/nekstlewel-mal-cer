@@ -25,9 +25,8 @@ export const heroContent = {
   },
   socialProof: [
     { label: "Laureat Orły 2024", icon: "EmojiEvents" },
-    { label: "Ocena 8.9/10", icon: "Star" },
-    { label: "15 opinii", icon: "Reviews" },
     { label: "Krosno Odrzańskie i okolice", icon: "LocationOn" },
+    { label: "Ocena 8.9/10", icon: "Star" },
   ],
 };
 

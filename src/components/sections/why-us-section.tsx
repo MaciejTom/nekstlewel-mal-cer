@@ -15,14 +15,14 @@ const s = {
 
   featuresGrid: "grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8",
   featureCard: "bg-background/50 p-6 border border-border/30 card-hover hover:border-primary/40 group transition-all duration-300",
-  featureCardHighlight: "bg-primary/5 border-primary/50 hover:bg-primary/10 hover:border-primary relative overflow-hidden",
+  featureCardHighlight: "bg-primary/5 border-primary/50 hover:bg-primary/10 hover:border-primary relative",
   featureIcon: "icon-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors rounded-lg",
   featureIconInner: "text-primary",
   featureTitle: "font-heading text-lg text-foreground mb-2 group-hover:text-primary transition-colors",
   featureDesc: "text-sm text-muted-foreground leading-relaxed",
   
   // Highlight badge for the award
-  awardBadge: "absolute -top-3 -right-3 bg-primary text-primary-foreground text-[10px] font-bold px-2 py-1 uppercase tracking-wider rounded-sm shadow-lg",
+  awardBadge: "absolute -top-3 -right-3 z-10 bg-primary text-primary-foreground text-[10px] font-bold px-2 py-1 uppercase tracking-wider rounded-sm shadow-lg",
 
   imageWrapper: "relative aspect-[4/3] lg:aspect-[3/4] group",
   image: "object-cover transition-all duration-700 ease-in-out",
