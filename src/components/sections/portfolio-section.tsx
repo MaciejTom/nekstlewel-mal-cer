@@ -17,8 +17,7 @@ const s = {
 
   // Card
   card: "group relative overflow-hidden bg-card border border-border hover:border-primary transition-colors",
-  cardImageWrapper: "relative h-64 md:h-72 overflow-hidden",
-  cardImage: "w-full h-full object-cover transition-transform duration-500 group-hover:scale-105",
+  cardImageWrapper: "relative w-full h-64 md:h-72 overflow-hidden",
   cardOverlay: "absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent",
 
   // Content
@@ -59,10 +58,16 @@ export function PortfolioSection() {
                 src={featuredItem.image}
                 alt={featuredItem.title}
                 fill
-                className={s.cardImage}
-                style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 100vw, 66vw"
                 loading="lazy"
+                className="transition-transform duration-500 group-hover:scale-105"
+                style={{
+                  objectFit: "cover",
+                  position: "absolute",
+                  width: "100%",
+                  height: "100%",
+                  inset: 0
+                }}
               />
               <div className={s.cardOverlay} />
             </div>
@@ -81,10 +86,16 @@ export function PortfolioSection() {
                   src={item.image}
                   alt={item.title}
                   fill
-                  className={s.cardImage}
-                  style={{ objectFit: "cover" }}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   loading="lazy"
+                  className="transition-transform duration-500 group-hover:scale-105"
+                  style={{
+                    objectFit: "cover",
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    inset: 0
+                  }}
                 />
                 <div className={s.cardOverlay} />
               </div>
