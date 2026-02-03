@@ -162,44 +162,44 @@ export const portfolioContent = {
   description: "",
   items: [
     {
-      id: "fasada-kamienicy",
-      title: "Fasada kamienicy",
+      id: "dom-nowoczesny",
+      title: "Dom jednorodzinny",
       description:
-        "Renowacja elewacji zabytkowej kamienicy dwukondygnacyjnej. Piaskowy tynk, klasyczne sztukaterie, detale architektoniczne. Ostrowiec Świętokrzyski.",
-      tags: ["Elewacje"],
+        "Nowoczesny dom parterowy — jasna elewacja, ciemna stolarka, wiata garażowa. Kompleksowa realizacja od fundamentów do wykończenia.",
+      tags: ["Budowa domów"],
       image: "/real-1.jpg",
     },
     {
-      id: "wykonczenie-wnetrza",
-      title: "Wykończenie wnętrza",
+      id: "fasada-kamienicy",
+      title: "Fasada kamienicy",
       description:
-        "Wykończenie wnętrza z dekoracyjnymi panelami ściennymi i sztukaterią. Gładzie, przygotowanie pod podłogi. Eleganckie detale wykończeniowe.",
-      tags: ["Wnętrza"],
+        "Renowacja elewacji zabytkowej kamienicy dwukondygnacyjnej. Piaskowy tynk, klasyczne sztukaterie, detale architektoniczne.",
+      tags: ["Elewacje"],
       image: "/real-2.jpg",
     },
     {
-      id: "dom-nowoczesny",
-      title: "Dom nowoczesny",
+      id: "dom-parterowy",
+      title: "Dom parterowy",
       description:
-        "Nowoczesny dom jednorodzinny — duże przeszklenia, ciemna elewacja z jasnym tynkiem, drewniana wiata. Kompleksowa realizacja.",
+        "Dom parterowy z garażem i wiatą. Jasna elewacja, ciemna dachówka, estetyczne wykończenie terenu.",
       tags: ["Budowa domów"],
       image: "/real-3.jpg",
     },
     {
-      id: "dom-z-panelami",
-      title: "Dom z panelami",
+      id: "docieplenie",
+      title: "Docieplenie budynku",
       description:
-        "Dom parterowy z panelami słonecznymi. Drewniane rolety, cokół z bloków kamiennych. Solidna, praktyczna konstrukcja.",
-      tags: ["Budowa domów"],
+        "Kompleksowe docieplenie budynku wielorodzinnego. Wełna mineralna, rusztowania, profesjonalny montaż.",
+      tags: ["Elewacje"],
       image: "/real-4.jpg",
     },
     {
-      id: "konstrukcja-dachowa",
-      title: "Konstrukcja dachowa",
+      id: "remont-wnetrza",
+      title: "Remont wnętrza",
       description:
-        "Drewniana konstrukcja dachu w trakcie budowy. Montaż okien PCV, przygotowanie do wykończenia.",
-      tags: ["Prace budowlane"],
-      image: "/hero1.jpg",
+        "Generalny remont starego budynku. Wymiana stropów, instalacji, przygotowanie pod wykończenie.",
+      tags: ["Wykończenia"],
+      image: "/real-5.jpg",
     },
   ],
   cta: {
