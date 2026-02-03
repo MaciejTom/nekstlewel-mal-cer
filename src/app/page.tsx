@@ -5,6 +5,7 @@ import {
   ServicesSection,
   ProcessSection,
   WhyUsSection,
+  WhyUsAlternative,
   PortfolioSection,
   FaqSection,
   ContactSection,
@@ -22,6 +23,7 @@ export default function HomePage() {
         <ServicesSection />
         <ProcessSection />
         <WhyUsSection />
+        <WhyUsAlternative />
         <PortfolioSection />
         <FaqSection />
         <ContactSection />

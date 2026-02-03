@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { siteConfig, navItems } from "@/lib/content";
 
 const s = {
@@ -11,9 +12,7 @@ const s = {
 
   // Logo - minimal
   logo: "flex items-center gap-2 group",
-  logoBox: "w-8 h-8 bg-primary flex items-center justify-center",
-  logoLetter: "font-heading text-sm text-primary-foreground",
-  logoText: "font-heading text-lg text-foreground",
+  logoImage: "relative w-8 h-8",
 
   // Nav - horizontal, subtle
   nav: "flex flex-wrap justify-center gap-6",
@@ -38,10 +37,14 @@ export function FooterSection() {
         <div className={s.main}>
           {/* Logo */}
           <a href="/" className={s.logo}>
-            <div className={s.logoBox}>
-              <span className={s.logoLetter}>M</span>
+            <div className={s.logoImage}>
+              <Image
+                src="/logo.jpg"
+                alt={siteConfig.name}
+                fill
+                className="object-contain"
+              />
             </div>
-            <span className={s.logoText}>{siteConfig.name}</span>
           </a>
 
           {/* Navigation */}

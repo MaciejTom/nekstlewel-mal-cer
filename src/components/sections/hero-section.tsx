@@ -4,7 +4,7 @@ import Image from "next/image";
 import { heroContent, siteConfig } from "@/lib/content";
 
 const s = {
-  section: "min-h-[80vh] flex items-center relative bg-background pt-20",
+  section: "min-h-screen flex items-center relative bg-background pt-20",
 
   imageBg: "absolute inset-0",
   overlay: "absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60 z-10",
@@ -23,10 +23,11 @@ const s = {
   ctaPrimary: "inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-4 font-heading text-lg tracking-wide hover:bg-primary/90 transition-colors",
   ctaSecondary: "inline-flex items-center justify-center gap-2 border-2 border-foreground/30 text-foreground px-6 py-4 font-heading text-lg tracking-wide hover:border-primary hover:text-primary transition-colors",
 
-  stats: "flex gap-8 pt-6 border-t border-border",
+  // Stats - subtelne
+  stats: "flex gap-8 pt-6 border-t border-border/50 mt-8",
   statItem: "flex flex-col",
-  statValue: "font-heading text-3xl text-primary",
-  statLabel: "text-xs text-muted-foreground uppercase tracking-wide",
+  statValue: "font-heading text-2xl md:text-3xl text-muted-foreground",
+  statLabel: "text-[10px] text-muted-foreground/70 uppercase tracking-wide",
 };
 
 export function HeroSection() {

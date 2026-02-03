@@ -1,17 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { navItems, siteConfig } from "@/lib/content";
 
 const s = {
   nav: "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
   navScrolled: "bg-background border-b border-border",
-  navTop: "bg-background/95",
+  navTop: "bg-transparent",
   container: "container mx-auto px-6 flex items-center justify-between h-16 md:h-20",
 
-  logo: "flex items-center gap-3 group",
-  logoIcon: "w-10 h-10 bg-primary flex items-center justify-center",
-  logoText: "font-heading text-xl md:text-2xl text-foreground",
+  logo: "flex items-center gap-2 group",
+  logoImage: "relative w-10 h-10 md:w-12 md:h-12",
 
   links: "hidden lg:flex items-center gap-1",
   link: "px-4 py-2 text-sm text-muted-foreground hover:text-primary transition-colors",
@@ -44,10 +44,14 @@ export function NavSection() {
         <div className={s.container}>
           {/* Logo */}
           <a href="/" className={s.logo}>
-            <div className={s.logoIcon}>
-              <span className="font-heading text-xl text-primary-foreground">M</span>
+            <div className={s.logoImage}>
+              <Image
+                src="/logo.jpg"
+                alt={siteConfig.name}
+                fill
+                className="object-contain"
+              />
             </div>
-            <span className={s.logoText}>{siteConfig.name}</span>
           </a>
 
           {/* Desktop Links */}
