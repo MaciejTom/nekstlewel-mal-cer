@@ -176,7 +176,6 @@ export const portfolioContent = {
         "Renowacja elewacji zabytkowej kamienicy dwukondygnacyjnej. Piaskowy tynk, klasyczne sztukaterie, detale architektoniczne.",
       tags: ["Elewacje"],
       image: "/malcer-2.webp",
-      imagePosition: "center 30%",
     },
     {
       id: "dom-parterowy",

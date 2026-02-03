@@ -18,7 +18,7 @@ const s = {
   // Card
   card: "group relative overflow-hidden bg-card border border-border hover:border-primary transition-colors",
   cardImageWrapper: "relative aspect-[4/3] overflow-hidden",
-  cardImage: "object-cover transition-transform duration-500 group-hover:scale-105",
+  cardImage: "w-full h-full object-cover transition-transform duration-500 group-hover:scale-105",
   cardOverlay: "absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent",
 
   // Content
@@ -81,7 +81,6 @@ export function PortfolioSection() {
                   alt={item.title}
                   fill
                   className={s.cardImage}
-                  style={item.imagePosition ? { objectPosition: item.imagePosition } : undefined}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   loading="lazy"
                 />
