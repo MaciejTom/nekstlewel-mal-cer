@@ -17,7 +17,7 @@ const s = {
 
   // Card - obraz na pełną wysokość karty
   card: "group relative overflow-hidden bg-card border border-border hover:border-primary transition-colors h-80 md:h-96",
-  cardOverlay: "absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent z-10",
+  cardOverlay: "absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10",
 
   // Content
   cardContent: "absolute bottom-0 left-0 right-0 p-5 z-20",
